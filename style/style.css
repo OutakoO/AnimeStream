@@ -1,0 +1,225 @@
+@font-face {
+    font-family: fontArabic;
+    src: url(../fonts/arabic.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    outline: transparent;
+}
+
+:root {
+    --dark-black: #010100;
+    --dark-grey: #131313;
+    --last-dark: #0C0C0C;
+    --purple-dark: #131116;
+    --light-grey: #E2E1DD;
+    --sky-blue: #2CBDFE;
+    --bright-purple: #FF0066;
+    --pale-pink: #FF6B97;
+}
+
+/*      nav     */
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: var(--last-dark);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav .logo {
+    color: var(--light-grey);
+    font-size: 2.5rem;
+    background-color: var(--dark-black);
+    padding: 20px 5%;
+
+}
+
+nav .container-search {
+    width: 50%;
+    height: 100%;
+    background-color: var(--dark-grey);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 99%);
+    /* box-shadow: -10px 0px 6px rgba(1, 1, 0, .8); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+nav .barSearch {
+    width: 50%;
+    height: 100%;
+    background-color: var(--light-grey);
+    display: flex;
+    /* border: 1px solid var(--dark-black); */
+}
+
+nav .barSearch input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--dark-black);
+    direction: rtl;
+}
+
+nav .barSearch button {
+    width: 50px;
+    border: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: var(--dark-black);
+    cursor: pointer;
+    border-right: 1px solid var(--dark-black);
+    transition: all 300ms;
+    flex-shrink: 0;
+}
+
+nav .barSearch button:hover {
+    color: var(--light-grey);
+    background-color: var(--dark-black);
+}
+
+/*      section     */
+
+section {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to left, rgba(1, 1, 0, 0.9) 30%, transparent 70%), url(../test.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+section .landing-content {
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .landing-content h1 {
+    direction: rtl;
+    color: var(--light-grey);
+    font-family: fontArabic;
+    font-size: 2rem;
+    font-weight: 200;
+    /* text-align: center; */
+}
+
+section .landing-content a {
+    color: var(--light-grey);
+    background-color: var(--bright-purple);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 250ms;
+}
+
+section .landing-content a:hover{
+    background-color: var(--pale-pink);
+}
+
+
+/* section {
+    width: 100%;
+    height: auto;
+    padding: 50px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--last-dark);
+} */
+
+/* section .box {
+    width: 150px;
+    height: 400px;
+    background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg) center;
+    transition: all 300ms;
+}
+
+section .box:hover{
+    width: 300px;
+    background-size: cover;
+    box-shadow: 0 0 10px var(--dark-black);
+} */
+
+/*      container       */
+
+.container {
+    width: 100%;
+    min-height: 350px;
+    background-color: var(--dark-grey);
+    /* box-shadow: 10px 0 10px var(--dark-black); */
+    filter: drop-shadow(10px 0 10px var(--dark-black));
+
+    display: flex;
+    /* align-items: stretch; */
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--last-dark);
+}
+
+.container .box {
+    width: 150px;
+    height: 450px;
+    /* background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg) center; */
+    transition: all 300ms;
+}
+
+.container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .box:hover {
+    width: 300px;
+}
+
+
+/*      footer      */
+footer {
+    width: 100%;
+    padding: 30px 5%;
+    background-color: var(--last-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-grey);
+    gap: 20px;
+}
+
+footer .logo {
+    font-size: 2rem;
+    color: var(--light-grey);
+}
+
+footer p {
+    direction: rtl;
+    color: var(--light-grey);
+}
+
+footer .links a {
+    color: var(--light-grey);
+    padding: 0 10px;
+}
+
+footer .links a:not(:last-child) {
+    border-right: 1px solid var(--light-grey);
+}
