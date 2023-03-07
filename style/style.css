@@ -128,7 +128,7 @@ section .landing-content a {
     transition: all 250ms;
 }
 
-section .landing-content a:hover{
+section .landing-content a:hover {
     background-color: var(--pale-pink);
 }
 
@@ -187,9 +187,17 @@ section .box:hover{
     object-fit: cover;
 }
 
-.container .box:hover {
+.container .box.active {
     width: 300px;
 }
+
+.container .box.hide {
+    display: none;
+}
+
+/* .container .box:hover {
+    width: 300px;
+} */
 
 
 /*      footer      */
