@@ -38,15 +38,13 @@ nav .logo {
     font-size: 2.5rem;
     background-color: var(--dark-black);
     padding: 20px 5%;
-
 }
 
 nav .container-search {
-    width: 50%;
+    width: 65%;
     height: 100%;
     background-color: var(--dark-grey);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 99%);
-    /* box-shadow: -10px 0px 6px rgba(1, 1, 0, .8); */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 99%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +56,6 @@ nav .barSearch {
     height: 100%;
     background-color: var(--light-grey);
     display: flex;
-    /* border: 1px solid var(--dark-black); */
 }
 
 nav .barSearch input {
@@ -114,7 +111,6 @@ section .landing-content h1 {
     font-family: fontArabic;
     font-size: 2rem;
     font-weight: 200;
-    /* text-align: center; */
 }
 
 section .landing-content a {
@@ -132,42 +128,14 @@ section .landing-content a:hover {
     background-color: var(--pale-pink);
 }
 
-
-/* section {
-    width: 100%;
-    height: auto;
-    padding: 50px 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    background-color: var(--last-dark);
-} */
-
-/* section .box {
-    width: 150px;
-    height: 400px;
-    background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg) center;
-    transition: all 300ms;
-}
-
-section .box:hover{
-    width: 300px;
-    background-size: cover;
-    box-shadow: 0 0 10px var(--dark-black);
-} */
-
 /*      container       */
 
 .container {
     width: 100%;
     min-height: 350px;
     background-color: var(--dark-grey);
-    /* box-shadow: 10px 0 10px var(--dark-black); */
     filter: drop-shadow(10px 0 10px var(--dark-black));
-
     display: flex;
-    /* align-items: stretch; */
     align-items: center;
     justify-content: center;
     gap: 5px;
@@ -177,7 +145,6 @@ section .box:hover{
 .container .box {
     width: 150px;
     height: 450px;
-    /* background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg) center; */
     transition: all 300ms;
 }
 
@@ -194,10 +161,6 @@ section .box:hover{
 .container .box.hide {
     display: none;
 }
-
-/* .container .box:hover {
-    width: 300px;
-} */
 
 
 /*      footer      */
@@ -230,4 +193,91 @@ footer .links a {
 
 footer .links a:not(:last-child) {
     border-right: 1px solid var(--light-grey);
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .navPhone {
+        height: 70px;
+        width: 90%;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--purple-dark);
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        place-items: center;
+        font-size: 1.2rem;
+    }
+
+    .navPhone a{
+        height: 100%;
+        color: var(--light-grey);
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .navPhone a.active{
+        color: var(--bright-purple);
+    }
+
+    nav {
+        height: 70px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    nav .logo {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    nav .container-search {
+        width: 55%;
+        height: 100%;
+        background-color: var(--dark-grey);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 99%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    nav .barSearch {
+        display: none;
+    }
+
+    section {
+        height: 400px;
+        background: linear-gradient(to top, rgba(1, 1, 0, .9), transparent 90%), url(../test.jpg);
+        background-size: cover;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 50px 0;
+    }
+
+    section .landing-content h1 {
+        font-size: clamp(1.2rem, 3.5vw, 2rem);
+    }
+
+    section .landing-content a {
+        font-size: 1rem;
+    }
+
+    section .landing-content a:hover {
+        background-color: var(--pale-pink);
+    }
+
+    .box {
+        height: 350px !important;
+        width: 80px !important;
+    }
+
+    .box.active {
+        width: 200px !important;
+    }
 }

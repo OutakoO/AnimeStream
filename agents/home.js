@@ -9,14 +9,21 @@ const randomData = [
     { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/JyrW3Te9qSqWD6Mm1592687621.jpg' },
     { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/BVvXiDMJ1dPETDea1674906853.jpg' },
     { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/LDB2Xa4i9WohVWxu1674819990.jpg' },
-    { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/ILD7Ihz11jsMKA5b1674706093.jpg' }
+    { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/ILD7Ihz11jsMKA5b1674706093.jpg' },
+    { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/BCWExvLRLDlZvVyL1674820386.jpg' },
+    { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/Sf4NkPbBXtjmbmfx1674382015.jpg' },
+    { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/SU8NXjHwmcYdMHvO1674497933.jpg' }
 ];
 
+const minSize = window.screen.width > 1000 ? 150 : 80;
+const sizePic = window.screen.width > 1000 ? 400 : 250;
+
 randomData.forEach((e, i) => { // loop through the data and put items inside
-    if (i < Math.ceil((window.screen.width - 400) / 150) + 1) { // add element depending on the screen
+    if (i < Math.ceil((window.screen.width - sizePic) / minSize) + 1) { // add element depending on the screen
         const aLink = document.createElement('a')
         const newImg = document.createElement('img')
         newImg.src = e.img
+        aLink.href = '#'
         aLink.classList.add('box')
         aLink.appendChild(newImg)
         container.appendChild(aLink)
@@ -56,3 +63,6 @@ function removeClass(target) {
 
     target.classList.add('active')
 }
+
+let elementNav = document.querySelector('.navPhone a.active').firstElementChild
+elementNav.setAttribute('name',elementNav.getAttribute('name').replace('outline','sharp'))
