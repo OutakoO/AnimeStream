@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./agents/search.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="logo">我想看</a>
+        <form class="container-search">
+            <div class="barSearch active">
+                <button><ion-icon name="search-outline"></ion-icon></button>
+                <input type="text" placeholder="البحث...">
+            </div>
+        </form>
+    </nav>
+    <div class="resultSearch2"></div>
+
+
+    <footer>
+        <a href="/" class="logo">我想看</a>
+        <p>&copy; جميع الحقوق محفوظة <b>2023</b></p>
+        <div class="links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Discord</a>
+        </div>
+    </footer>
+
+    <div class="navPhone">
+        <a href="#" id="btnHome" class="active">
+            <ion-icon name="home-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnSearch">
+            <ion-icon name="search-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnSave">
+            <ion-icon name="bookmark-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnAccount">
+            <ion-icon name="person-outline"></ion-icon>
+        </a>
+    </div>
+
+    <form class="formSearch">
+        <div class="barSearch">
+            <button><ion-icon name="search-outline"></ion-icon></button>
+            <input type="text" placeholder="البحث...">
+        </div>
+        <div class="resultSearch"></div>
+    </form>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

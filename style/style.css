@@ -432,3 +432,22 @@ ion-icon {
         padding: 30px 5% 20%;
     } */
 }
+
+.resultSearch2 {
+    padding: 20px 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.resultSearch2 .box2{
+    width: 250px;
+}
+
+.resultSearch2 .box2 img{
+    width: 100%;
+}

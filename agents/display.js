@@ -3,7 +3,7 @@ if (location.search.length < 1)
 
 
 const api = 'https://api.iwannawatch.cf/garson.php?'
-const nameAnime = decodeURI(location.search.substring(1)).split('/')
+const nameAnime = decodeURIComponent(location.search.substring(1)).split('/')
 const mainInfo = document.querySelector('.info')
 
 let ID, EP
@@ -48,7 +48,6 @@ function getEpisodes() {
                     newTitle.setAttribute('data-episode', element.Episode)
                     newTitle.setAttribute('data-ID', element.ID)
                     document.querySelector('.episodes').appendChild(newTitle)
-                    // newTitle.onclick
                 });
                 getVideo()
             }
@@ -70,6 +69,7 @@ function changeData() {
                 mainInfo.appendChild(newRea)
                 mainInfo.parentElement.querySelector('img').src = result[0].Image
             }
+            document.title = nameAnime[0]
         })
 }
 

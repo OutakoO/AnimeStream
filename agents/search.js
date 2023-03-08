@@ -1,31 +1,44 @@
 const formSearch = document.querySelector('.formSearch')
 const containerSearch = document.querySelector('.resultSearch')
+const containerSearch2 = document.querySelector('.resultSearch2')
+const formSearchPC = document.querySelector('.container-search')
+const api2 = 'https://api.iwannawatch.cf/garson.php?'
+
 
 formSearch.onsubmit = e => {
     e.preventDefault();
     if (formSearch.querySelector('input').value.length > 0) {
-        searchData(formSearch.querySelector('input').value).then(result => {
-            while (containerSearch.firstElementChild)
-                containerSearch.firstElementChild.remove()
-
-            result.forEach(e => {
-                // console.log(e)
-                const newLink = document.createElement('a')
-                const newImg = document.createElement('img')
-                newLink.href=`/display.html?${encodeURIComponent(e.Name)}`
-                newImg.src = e.Image
-                newLink.classList.add('box2')
-                newLink.append(newImg)
-                containerSearch.append(newLink)
-            })
-        })
-
+        setSearch(formSearch, containerSearch)
     }
+}
+formSearchPC.onsubmit = e => {
+    e.preventDefault();
+    if (formSearchPC.querySelector('input').value.length > 0) {
+        // console.log(formSearchPC.querySelector('input').value)
+        setSearch(formSearchPC, containerSearch2)
+    }
+}
 
+function setSearch(form, cont) {
+    searchData(form.querySelector('input').value).then(result => {
+        while (cont.firstElementChild)
+            cont.firstElementChild.remove()
+
+        result.forEach(e => {
+            // console.log(e)
+            const newLink = document.createElement('a')
+            const newImg = document.createElement('img')
+            newLink.href = `/display.html?${encodeURIComponent(e.Name)}`
+            newImg.src = e.Image
+            newLink.classList.add('box2')
+            newLink.append(newImg)
+            cont.append(newLink)
+        })
+    })
 }
 
 async function searchData(searchValue) {
-    const getData = await fetch(`${api}search=` + encodeURIComponent(searchValue))
+    const getData = await fetch(`${api2}search=` + encodeURIComponent(searchValue))
     const dataJson = await getData.json()
     return dataJson
 }
