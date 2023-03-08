@@ -33,7 +33,7 @@ randomData.forEach((e, i) => { // loop through the data and put items inside
 // call all items
 const boxex = document.querySelectorAll('.box');
 
-window.onload = () => { boxex.length > 0 && randomActive() }
+window.onload = () => { boxex.length > 0 && randomActive(); changeIcon() }
 
 // get random number for random active pic
 let random = Math.floor(Math.random() * randomData.length), timer
@@ -64,5 +64,29 @@ function removeClass(target) {
     target.classList.add('active')
 }
 
-let elementNav = document.querySelector('.navPhone a.active').firstElementChild
-elementNav.setAttribute('name',elementNav.getAttribute('name').replace('outline','sharp'))
+function changeIcon() {
+    let elementNav = document.querySelector('.navPhone a.active').firstElementChild
+    elementNav.setAttribute('name', elementNav.getAttribute('name').replace('outline', 'sharp'))
+}
+
+const formSearch = document.querySelector('.formSearch')
+const navPhone = document.querySelector('.navPhone')
+
+btnSearch.onclick = e => {
+    let elementNav = document.querySelector('.navPhone a.active').firstElementChild
+    while (navPhone.querySelector('.active')) {
+        navPhone.querySelector('.active').classList.remove('active')
+        elementNav.setAttribute('name', elementNav.getAttribute('name').replace('sharp', 'outline'))
+    }
+
+    formSearch.classList.toggle('active')
+    if (formSearch.classList.value.includes('active')) {
+        document.body.style.overflow = 'hidden'
+        btnSearch.classList.toggle('active')
+        changeIcon()
+    }
+    else {
+        document.body.style.overflow = 'auto'
+        return;
+    }
+}

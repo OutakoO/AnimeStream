@@ -11,25 +11,12 @@
 </head>
 
 <body>
-    <div class="navPhone">
-        <a href="#" class="active">
-            <ion-icon name="home-outline"></ion-icon>
-        </a>
-        <a href="#">
-            <ion-icon name="search-outline"></ion-icon>
-        </a>
-        <a href="#">
-            <ion-icon name="bookmark-outline"></ion-icon>
-        </a>
-        <a href="#">
-            <ion-icon name="person-outline"></ion-icon>
-        </a>
-    </div>
+
     
     <nav>
         <div class="logo">我想看</div>
         <form class="container-search">
-            <div class="barSearch">
+            <div class="barSearch active">
                 <button><ion-icon name="search-outline"></ion-icon></button>
                 <input type="text" placeholder="البحث...">
             </div>
@@ -55,6 +42,52 @@
             <a href="#">Discord</a>
         </div>
     </footer>
+
+    <div class="navPhone">
+        <a href="#" id="btnHome" class="active">
+            <ion-icon name="home-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnSearch">
+            <ion-icon name="search-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnSave">
+            <ion-icon name="bookmark-outline"></ion-icon>
+        </a>
+        <a href="#" id="btnAccount">
+            <ion-icon name="person-outline"></ion-icon>
+        </a>
+    </div>
+
+    <form class="formSearch">
+        <div class="barSearch">
+            <button><ion-icon name="search-outline"></ion-icon></button>
+            <input type="text" placeholder="البحث...">
+        </div>
+        <div class="resultSearch">
+            <h3>Result Search:</h3>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+            <a href="#" class="box2">
+                <img src="https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg" alt="">
+            </a>
+        </div>
+    </form>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
