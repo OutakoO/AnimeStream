@@ -1,5 +1,5 @@
 const container = document.querySelector('.container') // call container to add items inside
-
+const api = 'https://api.iwannawatch.cf/garson.php?'
 const randomData = [
     { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg' },
     { 'name': 'naruto', 'img': 'https://api.animeiat.co/storage/posters/05gdg9DxYw1yhgqa1591229781.jpg' },
@@ -64,42 +64,3 @@ function removeClass(target) {
     target.classList.add('active')
 }
 
-const formSearch = document.querySelector('.formSearch')
-btnSearch.onclick = e => {
-    e.preventDefault()
-
-    if (!btnSearch.classList.value.includes('active')) {
-        while (document.querySelector('.navPhone a.active'))
-            document.querySelector('.navPhone a.active').classList.remove('active')
-        btnSearch.classList.add('active')
-        document.body.style.overflow = 'hidden'
-        window.scrollTo(0, 0)
-        formSearch.classList.add('active')
-        changeIcon()
-    } else {
-        while (document.querySelector('.navPhone a.active'))
-            document.querySelector('.navPhone a.active').classList.remove('active')
-        btnSearch.classList.remove('active')
-        document.body.style.overflow = 'auto'
-        formSearch.classList.remove('active')
-        if (location.pathname.includes('index.html') || location.pathname == ('/')) {
-            btnHome.classList.add('active')
-            changeIcon()
-        }
-    }
-}
-
-btnHome.onclick = e => {
-    location.href = 'index.html'
-}
-
-function changeIcon() {
-    let allElemntNav = document.querySelectorAll('.navPhone a'),
-        elementNav = document.querySelector('.navPhone a.active').firstElementChild
-    allElemntNav.forEach(e => {
-        // console.log(e)
-        e.firstElementChild.setAttribute('name', e.firstElementChild.getAttribute('name').replace('sharp', 'outline'))
-    })
-
-    elementNav.setAttribute('name', elementNav.getAttribute('name').replace('outline', 'sharp'))
-}

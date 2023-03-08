@@ -179,6 +179,25 @@ section .landing-content a:hover {
     display: none;
 }
 
+.aboutMovie {
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    direction: rtl;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: var(--dark-grey);
+    filter: drop-shadow(10px 0 10px var(--dark-black));
+}
+
+.aboutMovie .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--light-grey);
+}
+
 
 /*      footer      */
 footer {
@@ -212,8 +231,32 @@ footer .links a:not(:last-child) {
     border-right: 1px solid var(--light-grey);
 }
 
-:where(.navPhone,.formSearch) {
+:where(.navPhone, .formSearch) {
     display: none;
+}
+
+ion-icon {
+    pointer-events: none;
+}
+
+.episodes {
+    width: 100%;
+    max-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
+    overflow-y: auto;
+}
+
+.episodes .epi {
+    background-color: var(--purple-dark);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--light-grey);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -341,17 +384,48 @@ footer .links a:not(:last-child) {
         overflow-y: auto;
     }
 
-    .formSearch.active .resultSearch h3{
+    .formSearch.active .resultSearch h3 {
         width: 100%;
         color: var(--light-grey);
     }
 
-    .formSearch.active .resultSearch .box2{
+    .formSearch.active .resultSearch .box2 {
         width: 150px;
     }
 
-    .formSearch.active .resultSearch .box2 img{
+    .formSearch.active .resultSearch .box2 img {
         width: 100%;
+    }
+
+    .aboutMovie {
+        width: 100%;
+        min-height: 400px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        direction: rtl;
+        gap: 20px;
+        padding: 20px 5%;
+        background-color: var(--dark-grey);
+        filter: drop-shadow(10px 0 10px var(--dark-black));
+    }
+
+    .aboutMovie img {
+        width: 200px !important;
+    }
+
+    .aboutMovie h1 {
+        font-size: 1.5rem;
+    }
+
+    .aboutMovie p {
+        font-size: .6rem;
+    }
+
+    .aboutMovie .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--light-grey);
     }
 
     /* footer {
