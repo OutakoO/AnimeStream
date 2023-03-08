@@ -418,7 +418,7 @@ ion-icon {
     }
 
     .aboutMovie p {
-        font-size: .6rem;
+        font-size: clamp(.6rem ,2vw, 1rem);
     }
 
     .aboutMovie .info {

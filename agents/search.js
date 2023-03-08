@@ -8,19 +8,24 @@ const api2 = 'https://api.iwannawatch.cf/garson.php?'
 formSearch.onsubmit = e => {
     e.preventDefault();
     if (formSearch.querySelector('input').value.length > 0) {
-        setSearch(formSearch, containerSearch)
+        setSearch(formSearch.querySelector('input').value, containerSearch)
     }
+}
+
+if (location.pathname.includes('search.html') && location.search.length > 0) {
+    setSearch(location.search.substring(1), containerSearch2)
 }
 formSearchPC.onsubmit = e => {
     e.preventDefault();
     if (formSearchPC.querySelector('input').value.length > 0) {
-        // console.log(formSearchPC.querySelector('input').value)
-        setSearch(formSearchPC, containerSearch2)
+        if (location.pathname.includes('index.html') || location.pathname == '/')
+            location.href = `/search.html?${formSearchPC.querySelector('input').value}`
+        setSearch(formSearchPC.querySelector('input').value, containerSearch2)
     }
 }
 
 function setSearch(form, cont) {
-    searchData(form.querySelector('input').value).then(result => {
+    searchData(form).then(result => {
         while (cont.firstElementChild)
             cont.firstElementChild.remove()
 
