@@ -29,9 +29,9 @@ function setSearch(form, cont) {
         while (cont.firstElementChild)
             cont.firstElementChild.remove()
 
-        if(result.length == 0){
+        if (result.length == 0) {
             const newLink = document.createElement('h1')
-            newLink.textContent='Sorry, we couldn\'t find any results :)'
+            newLink.textContent = 'عذرا ، لم نتمكن من العثور على أي نتائج :)'
             newLink.classList.add('emptySearch')
             cont.append(newLink)
         }
