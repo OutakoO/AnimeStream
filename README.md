@@ -68,7 +68,7 @@ Takes two Parameters and returns the all episodes.
 
 
 
-## Authors
+## Author
 
 - [@OutakoO](https://github.com/OutakoO)
 
