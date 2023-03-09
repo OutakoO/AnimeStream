@@ -18,7 +18,7 @@ if (location.pathname.includes('search.html') && location.search.length > 0) {
 formSearchPC.onsubmit = e => {
     e.preventDefault();
     if (formSearchPC.querySelector('input').value.length > 0) {
-        if (location.pathname.includes('index.html') || location.pathname == '/')
+        if (!location.pathname.includes('search.html'))
             location.href = `/search.html?${formSearchPC.querySelector('input').value}`
         setSearch(formSearchPC.querySelector('input').value, containerSearch2)
     }
