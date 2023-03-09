@@ -36,6 +36,10 @@ function getVideo() {
         })
 }
 
+document.querySelector('video').oncanplay = e => { // when video ready
+    document.querySelector('video').scrollIntoView({ block: "end" })
+}
+
 function getEpisodes() {
     fetchData('Name=' + encodeURIComponent(nameAnime[0]) + '&status=list').
         then(result => {
