@@ -12,9 +12,8 @@ formSearch.onsubmit = e => {
     }
 }
 
-if (location.pathname.includes('search.html') && location.search.length > 0) {
-    setSearch(location.search.substring(1), containerSearch2)
-}
+location.pathname.includes('search.html') && location.search.length > 0 && setSearch(location.search.substring(1), containerSearch2)
+
 formSearchPC.onsubmit = e => {
     e.preventDefault();
     if (formSearchPC.querySelector('input').value.length > 0) {
@@ -50,7 +49,7 @@ function setSearch(form, cont) {
 }
 
 async function searchData(searchValue) {
-    const getData = await fetch(`${api2}search=` + encodeURIComponent(searchValue))
+    const getData = await fetch(`${api2}search=` + searchValue)
     const dataJson = await getData.json()
     return dataJson
 }
